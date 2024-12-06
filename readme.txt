@@ -62,17 +62,23 @@ Activity 3:
 
 
 Step 1: Add the Hard Disk
+
+
 Open the virtual machine settings (e.g., VirtualBox or VMware).
 Add a new hard disk:
 Go to Storage settings.
 Select Add New Hard Disk and choose the desired size.
 Save the settings and restart the VM.
+
+
 Step 2: Check the New Disk
 After booting, verify the new disk is added:
 bash
 Copy code
 ls /dev/
 Look for the new disk (e.g., /dev/sdb).
+
+
 Step 3: Partition the Disk
 Open fdisk to manage the disk:
 
@@ -95,11 +101,14 @@ Copy code
 sudo fdisk -l /dev/sdb
 You should see /dev/sdb1, /dev/sdb2, and /dev/sdb3.
 
+
 Step 4: Create a File System
 Format the entire disk as ext3:
 bash
 Copy code
 sudo mkfs -t ext3 /dev/sdb
+
+
 Step 5: Verify the File System
 Confirm file system creation:
 bash
